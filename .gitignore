@@ -33,4 +33,4 @@ build/
 .vscode/
 
 ###certs
-.pem
+*.pem
