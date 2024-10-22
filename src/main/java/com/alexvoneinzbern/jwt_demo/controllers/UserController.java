@@ -22,7 +22,7 @@ public class UserController {
   @PostMapping("/register")
   public ResponseEntity<String> registerUser(@RequestBody UserRegistrationDto registrationDto) {
     try {
-      User user = userService.createUser(registrationDto.getUsername(), registrationDto.getPassword());
+      User user = userService.createUser(registrationDto.getUsername(), registrationDto.getPassword(), registrationDto.getRoles());
       return ResponseEntity.ok("User registered successfully");
     } catch (RuntimeException e) {
       return ResponseEntity.badRequest().body(e.getMessage());
